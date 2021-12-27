@@ -44,9 +44,25 @@ with open(PyPollpath) as csvfile:
     OTooley_percent = OTooley_votes/Total_votes
 
     #Print results
+    print ("Election Results")
+    print ("-----------------------------")
     print("Total Votes:" + str(Total_votes))
+    print ("-----------------------------")
 
     print(f'Khan: {Khan_percent:.3%} ({Khan_votes})')
     print(f'Correy: {Correy_percent:.3%} ({Correy_votes})')
     print(f'Li: {Li_percent:.3%} ({Li_votes})')
     print(f"O'Tooley: {OTooley_percent:.3%} ({OTooley_votes})")
+    print ("-----------------------------")
+
+    #Find the winner
+    winner = max(Khan_votes,Correy_votes,Li_votes, OTooley_votes)
+    if winner == Khan_votes:
+        print("Winner: Khan")
+    elif winner == Correy_votes:
+        print("Winner: Correy")
+    elif winner == Li_votes:
+        print("Winner: Li")
+    elif winner == OTooley_votes:
+        print("Winner: O'Tooley")
+    print ("-----------------------------")
