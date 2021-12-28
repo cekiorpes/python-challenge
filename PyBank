@@ -1,0 +1,34 @@
+#Modules
+import os
+import csv
+
+#Lists
+Date = []
+Profit_Losses = []
+IntPL= []
+
+#Set path for file
+PyBankpath = os.path.join("..","PyBank","Resources","budget_data.csv")
+
+#Open the csv file
+with open(PyBankpath) as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    csv_header = next(csvreader)
+
+    for row in csvreader:
+        Date.append(row[0])
+        Profit_Losses.append(row[1])
+
+        #Make items in Profit/Losses list integers
+        Profit_Losses= [int(item) for item in Profit_Losses]
+
+    #Find number of months
+    months = (len(Date))
+    print(f'Total Months:{(months)}')
+
+
+    #Net profit/losses - add up profit/losses in row [1]    
+    NetTotal = sum(Profit_Losses)
+    print(f'Total: {NetTotal}')
+
+    #Calculate Average Change
