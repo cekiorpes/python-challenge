@@ -24,15 +24,12 @@ with open(PyBankpath) as csvfile:
 
     #Find number of months
     months = (len(Date))
-    print(f'Total Months:{(months)}')
 
     #Net profit/losses - add up profit/losses in row [1]    
     NetTotal = sum(Profit_Losses)
-    print(f'Total: ${NetTotal}')
 
     #Calculate Average Change (total change in profits/change in months)
     AvgChange = (Profit_Losses[85] - Profit_Losses[0])/(months-1)
-    print(f'Average Change: ${AvgChange:.2f}')
 
     #Find the greatest increase and greatest decrease
     ProfitChange = []
@@ -43,7 +40,16 @@ with open(PyBankpath) as csvfile:
     
     GreatestIncrease_index = ProfitChange.index(GreatestIncrease)
     GreatestDecrease_index = ProfitChange.index(GreatestDecrease)
-    print(Date[GreatestIncrease_index +1])
-    print(Date[GreatestDecrease_index +1])
-    print(GreatestIncrease)
-    print(GreatestDecrease)
+    DateGreatestIncrease= Date[GreatestIncrease_index +1]
+    DateGreatestDecrease= Date[GreatestDecrease_index +1]
+    
+
+    #Print results
+    print("Financial Analysis")
+    print("-----------------------------")  
+    print(f'Total Months:{(months)}')
+    print(f'Total: ${NetTotal}')
+    print(f'Average Change: ${AvgChange:.2f}')
+    print(f'Greatest Increase in Profits: {DateGreatestIncrease} (${GreatestIncrease:.2f})')
+    print(f'Greatest Decrease in Profits: {DateGreatestDecrease} (${GreatestDecrease:.2f})')
+
