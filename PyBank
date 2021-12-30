@@ -47,9 +47,25 @@ with open(PyBankpath) as csvfile:
     #Print results
     print("Financial Analysis")
     print("-----------------------------")  
-    print(f'Total Months:{(months)}')
+    print(f'Total Months: {(months)}')
     print(f'Total: ${NetTotal}')
     print(f'Average Change: ${AvgChange:.2f}')
     print(f'Greatest Increase in Profits: {DateGreatestIncrease} (${GreatestIncrease:.2f})')
     print(f'Greatest Decrease in Profits: {DateGreatestDecrease} (${GreatestDecrease:.2f})')
+
+#Write text file with results
+
+#Output path
+output_path=os.path.join("..","PyBank","Analysis","financial_analysis.txt")
+
+with open(output_path, 'w') as Analysis:
+
+    Analysis.write("Financial Analysis"'\n')
+    Analysis.write("-----------------------------" '\n')
+    Analysis.write(f'Total Months: {(months)}' '\n')
+    Analysis.write(f'Total: ${NetTotal}' '\n')
+    Analysis.write(f'Average Change: ${AvgChange:.2f}' '\n')
+    Analysis.write(f'Greatest Increase in Profits: {DateGreatestIncrease} (${GreatestIncrease:.2f})' '\n')
+    Analysis.write(f'Greatest Decrease in Profits: {DateGreatestDecrease} (${GreatestDecrease:.2f})' '\n')
+
 
