@@ -5,7 +5,6 @@ import csv
 #Lists
 Date = []
 Profit_Losses = []
-IntPL= []
 
 #Set path for file
 PyBankpath = os.path.join("..","PyBank","Resources","budget_data.csv")
