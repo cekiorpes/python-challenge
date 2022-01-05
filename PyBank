@@ -16,10 +16,7 @@ with open(PyBankpath) as csvfile:
 
     for row in csvreader:
         Date.append(row[0])
-        Profit_Losses.append(row[1])
-
-        #Make items in Profit/Losses list integers
-        Profit_Losses= [int(item) for item in Profit_Losses]
+        Profit_Losses.append(int(row[1]))
 
     #Find number of months
     months = (len(Date))
@@ -39,8 +36,9 @@ with open(PyBankpath) as csvfile:
     
     GreatestIncrease_index = ProfitChange.index(GreatestIncrease)
     GreatestDecrease_index = ProfitChange.index(GreatestDecrease)
-    DateGreatestIncrease= Date[GreatestIncrease_index +1]
-    DateGreatestDecrease= Date[GreatestDecrease_index +1]
+    
+    DateGreatestIncrease = Date[GreatestIncrease_index +1]
+    DateGreatestDecrease = Date[GreatestDecrease_index +1]
     
 
     #Print results
