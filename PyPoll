@@ -44,28 +44,28 @@ with open(PyPollpath) as csvfile:
     OTooley_percent = OTooley_votes/Total_votes
 
 Election_summary = ["Election Results" '\n',
-                    "-----------------------------" '\n',
-                    f"Total Votes: {Total_votes}" '\n',
-                    "-----------------------------" '\n',
-                    f'Khan: {Khan_percent:.3%} ({Khan_votes})' '\n',
-                    f'Correy: {Correy_percent:.3%} ({Correy_votes})' '\n',
-                    f'Li: {Li_percent:.3%} ({Li_votes})' '\n',
-                    f"O'Tooley: {OTooley_percent:.3%} ({OTooley_votes})" '\n',
-                    "-----------------------------" '\n'
+                    "-----------------------------\n",
+                    f"Total Votes: {Total_votes}\n",
+                    "-----------------------------\n",
+                    f'Khan: {Khan_percent:.3%} ({Khan_votes})\n',
+                    f'Correy: {Correy_percent:.3%} ({Correy_votes})\n',
+                    f'Li: {Li_percent:.3%} ({Li_votes})\n',
+                    f"O'Tooley: {OTooley_percent:.3%} ({OTooley_votes})\n",
+                    "-----------------------------\n"
                     ]
 
 #Find the winner
 winner = max(Khan_votes,Correy_votes,Li_votes, OTooley_votes)
 if winner == Khan_votes:
-    Election_summary.append("Winner: Khan" '\n',)
+    Election_summary.append("Winner: Khan\n",)
 elif winner == Correy_votes:
-    Election_summary.append("Winner: Correy" '\n')
+    Election_summary.append("Winner: Correy\n")
 elif winner == Li_votes:
-    Election_summary.append("Winner: Li" '\n')
+    Election_summary.append("Winner: Li\n")
 elif winner == OTooley_votes:
-    Election_summary.append("Winner: O'Tooley" '\n')
+    Election_summary.append("Winner: O'Tooley\n")
 
-Election_summary.append("-----------------------------" '\n')
+Election_summary.append("-----------------------------\n")
 
 #Print and write text file with summary
 print(*Election_summary, sep="")
