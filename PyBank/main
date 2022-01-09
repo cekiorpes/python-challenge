@@ -37,8 +37,8 @@ with open(PyBankpath) as csvfile:
     GreatestIncrease_index = ProfitChange.index(GreatestIncrease)
     GreatestDecrease_index = ProfitChange.index(GreatestDecrease)
     
-    DateGreatestIncrease = Date[GreatestIncrease_index +1]
-    DateGreatestDecrease = Date[GreatestDecrease_index +1]
+    DateGreatestIncrease = Date[GreatestIncrease_index + 1]
+    DateGreatestDecrease = Date[GreatestDecrease_index + 1]
     
 Result_summary = ["Financial Analysis"'\n',
                   "-----------------------------" '\n',
