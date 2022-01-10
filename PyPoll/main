@@ -14,7 +14,9 @@ PyPollpath = os.path.join("..","PyPoll","Resources","election_data.csv")
 #Open the csv file
 with open(PyPollpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
+    csv_header = next(csvreader)
 
+    #Tally votes for each candidate
     for row in csvreader:
         if row[2] == "Khan":
             Khan_count.append(1)
