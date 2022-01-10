@@ -40,13 +40,13 @@ with open(PyBankpath) as csvfile:
     DateGreatestIncrease = Date[GreatestIncrease_index + 1]
     DateGreatestDecrease = Date[GreatestDecrease_index + 1]
     
-Result_summary = ["Financial Analysis"'\n',
-                  "-----------------------------" '\n',
-                  f'Total Months: {(months)}' '\n',
-                  f'Total: ${NetTotal}' '\n',
-                  f'Average Change: ${AvgChange:.2f}' '\n',
-                  f'Greatest Increase in Profits: {DateGreatestIncrease} (${GreatestIncrease:.2f})' '\n',
-                  f'Greatest Decrease in Profits: {DateGreatestDecrease} (${GreatestDecrease:.2f})' '\n'
+Result_summary = ["Financial Analysis\n",
+                  "-----------------------------\n",
+                  f'Total Months: {(months)}\n',
+                  f'Total: ${NetTotal}\n',
+                  f'Average Change: ${AvgChange:.2f}\n',
+                  f'Greatest Increase in Profits: {DateGreatestIncrease} (${GreatestIncrease:.2f})\n',
+                  f'Greatest Decrease in Profits: {DateGreatestDecrease} (${GreatestDecrease:.2f})\n'
                   ]
                   
 #Print results
