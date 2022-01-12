@@ -3,10 +3,10 @@ import os
 import csv
 
 #Lists
-Khan_count = []
-Correy_count = []
-Li_count = []
-OTooley_count =[] 
+Khan_votes = 0
+Correy_votes = 0
+Li_votes = 0
+OTooley_votes = 0
 
 #Set path for file
 PyPollpath = os.path.join("..","PyPoll","Resources","election_data.csv")
@@ -16,25 +16,19 @@ with open(PyPollpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     csv_header = next(csvreader)
 
-    #Tally votes for each candidate
+    #Count votes for each candidate
     for row in csvreader:
         if row[2] == "Khan":
-            Khan_count.append(1)
+            Khan_votes += 1
         
-        if row[2] == "Correy":
-            Correy_count.append(1)
+        elif row[2] == "Correy":
+            Correy_votes += 1
 
-        if row[2] == "Li":
-            Li_count.append(1)
+        elif row[2] == "Li":
+            Li_votes += 1
         
-        if row[2] == "O'Tooley":
-            OTooley_count.append(1)
-    
-    #Count votes for each candidate   
-    Khan_votes = len(Khan_count)
-    Correy_votes = len(Correy_count)
-    Li_votes = len(Li_count)
-    OTooley_votes = len(OTooley_count)
+        elif row[2] == "O'Tooley":
+            OTooley_votes += 1
 
     #Calculate Total Votes
     Total_votes = Khan_votes + Correy_votes + Li_votes + OTooley_votes
